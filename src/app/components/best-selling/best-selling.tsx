@@ -19,7 +19,7 @@ const BestSelling = () => {
     fetchPlants();
   }, []);
   return (
-    <div className="my-10">
+    <div className="my-10 container">
       <TitleBestSelling />
       <PlantList plants={plants.slice(0, 6)} />
     </div>

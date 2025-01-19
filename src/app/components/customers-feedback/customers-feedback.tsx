@@ -21,12 +21,12 @@ export default function FeedbackCarousel() {
   ];
 
   return (
-    <>
+    <div className="container">
       <TitleSection
         title="Customers Feedback"
         subtitle="What customers say about us?"
       />
       <FeedbackSlider feedbacks={feedbacks} />
-    </>
+    </div>
   );
 }

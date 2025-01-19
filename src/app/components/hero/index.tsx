@@ -5,7 +5,7 @@ import { ROUTES } from "../conistant/enum";
 
 const Hero = () => {
   return (
-    <div className="lg:min-h-screen-70 bg-green-100 w-full rounded-xl lg:rounded-[50px] shadow-2xl lg:grid grid-cols-1 lg:grid-cols-2  ">
+    <div className="container lg:min-h-screen-70 bg-green-100 w-full rounded-xl lg:rounded-[50px] shadow-2xl lg:grid grid-cols-1 lg:grid-cols-2  ">
       <div className="flex flex-col gap-2 lg:gap-3 items-start justify-center p-4 lg:p-8 h-full">
         <h1 className="text-2xl lg:text-5xl font-bold text-primary capitalize">
           Welcome to our store,
