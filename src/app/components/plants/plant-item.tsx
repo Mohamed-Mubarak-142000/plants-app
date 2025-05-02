@@ -3,6 +3,8 @@ import { Plant } from "../types/plants";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
+import Link from "../link";
+import { formatCurrency } from "@/lib/formatter";
 
 const PlantItem = ({ plant }: { plant: Plant }) => {
   return (
@@ -20,8 +22,13 @@ const PlantItem = ({ plant }: { plant: Plant }) => {
 
       <CardFooter className="flex flex-col gap-5 m-0 p-3">
         <div className="flex justify-between items-center w-full">
-          <span className="text-center">{plant.name}</span>
-          <span className="text-center font-bold">${plant.price}</span>
+          <span className="text-center">
+            {" "}
+            <Link href={`/plants/${plant.id}`}>{plant.name}</Link>{" "}
+          </span>
+          <span className="text-center font-bold">
+            {formatCurrency(plant.price)}
+          </span>
         </div>
 
         <div className="flex justify-between items-center w-full">

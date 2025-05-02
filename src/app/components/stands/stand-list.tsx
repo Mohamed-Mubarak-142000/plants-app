@@ -16,7 +16,7 @@ const StandList = ({ allStand }: { allStand: StandListProps[] }) => {
       ))}
       <div className=" flex items-center justify-start">
         <Link
-          href={ROUTES.PRODUCTS}
+          href={ROUTES.STANDS}
           className="w-full flex items-center justify-start gap-2  py-3 px-6 transition-all duration-150"
         >
           See more <ArrowRight />

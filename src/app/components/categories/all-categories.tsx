@@ -37,7 +37,7 @@ const AllCategories = () => {
               Horem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
             <Link
-              href={ROUTES.PRODUCTS}
+              href={ROUTES.CATEGORIES}
               className="py-3 px-8 bg-green-800 hover:bg-green-900 hover:rounded-md text-white flex items-center gap-2 transition-all duration-150"
             >
               Explore <ArrowRight />

@@ -13,7 +13,7 @@ const TitleBestSelling = () => {
       </div>
 
       <Link
-        href={ROUTES.PRODUCTS}
+        href={ROUTES.PLANTS}
         className="text-white bg-green-800 py-3 px-6 hover:bg-green-900 transition-all duration-150"
       >
         See more

@@ -8,7 +8,7 @@ import TitleSection from "./components/title-section/title-section";
 
 export default function Home() {
   return (
-    <main className="mt-[6rem] lg:mt-[7rem] min-h-[calc(110vh-7rem)]">
+    <>
       <Hero />
       <BestSelling />
       <TitleSection
@@ -27,6 +27,6 @@ export default function Home() {
       />
       <AllCategories />
       <FeedbackCarousel />
-    </main>
+    </>
   );
 }

@@ -5,8 +5,9 @@ import Link from "../link";
 const Navbar = ({ className = "" }) => {
   const links = [
     { id: 1, title: "Home", url: ROUTES.HOME },
-    { id: 2, title: "Products", url: ROUTES.PRODUCTS },
-    { id: 3, title: "About", url: ROUTES.ABOUT },
+    { id: 2, title: "Plants", url: ROUTES.PLANTS },
+    { id: 3, title: "Stands", url: ROUTES.STANDS },
+    { id: 3, title: "Categories", url: ROUTES.CATEGORIES },
     { id: 4, title: "Contact", url: ROUTES.CONTACT },
   ];
 

@@ -1,8 +1,9 @@
 export enum ROUTES {
   HOME = "/",
-  ABOUT = "/about",
   CONTACT = "/contact",
-  PRODUCTS = "/products",
+  PLANTS = "/plants",
+  STANDS = "/stands",
+  CATEGORIES = "/categories",
 }
 
 export enum AUTH {

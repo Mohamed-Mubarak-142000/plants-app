@@ -35,7 +35,7 @@ const Hero = () => {
 
         <Link
           className="bg-green-800 text-white py-3 w-full lg:w-1/2 text-center uppercase hover:rounded-md mt-5 hover:bg-green-900 transition-all duration-150"
-          href={ROUTES.PRODUCTS}
+          href={ROUTES.PLANTS}
         >
           Shop Now
         </Link>
