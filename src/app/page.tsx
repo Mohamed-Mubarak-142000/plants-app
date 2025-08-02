@@ -1,3 +1,4 @@
+import { db } from "@/lib/prisma-db";
 import AboutUs from "./components/about/about-us";
 import BestSelling from "./components/best-selling/best-selling";
 import AllCategories from "./components/categories/all-categories";
@@ -6,7 +7,9 @@ import Hero from "./components/hero";
 import AllStands from "./components/stands/all-stands";
 import TitleSection from "./components/title-section/title-section";
 
-export default function Home() {
+export default async function Home() {
+  const allProducts = await db.product.findMany();
+  console.log("allProducts", allProducts);
   return (
     <>
       <Hero />
