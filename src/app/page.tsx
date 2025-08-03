@@ -8,8 +8,8 @@ import AllStands from "./components/stands/all-stands";
 import TitleSection from "./components/title-section/title-section";
 
 export default async function Home() {
-  const allProducts = await db.product.findMany();
-  console.log("allProducts", allProducts);
+  const products = await db.stand.findMany();
+  console.log("products", products);
   return (
     <>
       <Hero />

@@ -10,17 +10,62 @@ datasource db {
 model Product {
   id String @id @default(cuid())
 
-  name String
+  name_ar String
+  name_en String
 
-  description String
+  description_ar String
+  description_en String
 
   image String
 
   order Int
 
-  basePrice Float
+  basePrice  Float
+  offerPrice Float
+
+  stock    Int
+  category Category @relation(fields: [categoryId], references: [id])
+
+  stands Stand[]
+
+  createdAt DateTime @default(now())
+
+  updatedAt  DateTime @updatedAt
+  categoryId String
+}
+
+model Order {
+  id String @id @default(cuid())
 
   createdAt DateTime @default(now())
 
   updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id      String    @id @default(cuid())
+  name_ar String
+  name_en String
+  Product Product[]
+}
+
+model Stand {
+  id      String @id @default(cuid())
+  name_ar String
+  name_en String
+
+  description_ar String
+  description_en String
+
+  image      String
+  basePrice  Float
+  offerPrice Float
+
+  stock Int
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+  Product   Product? @relation(fields: [productId], references: [id])
+  productId String?
 }

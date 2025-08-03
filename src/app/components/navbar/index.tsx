@@ -7,8 +7,8 @@ const Navbar = ({ className = "" }) => {
     { id: 1, title: "Home", url: ROUTES.HOME },
     { id: 2, title: "Plants", url: ROUTES.PLANTS },
     { id: 3, title: "Stands", url: ROUTES.STANDS },
-    { id: 3, title: "Categories", url: ROUTES.CATEGORIES },
-    { id: 4, title: "Contact", url: ROUTES.CONTACT },
+    { id: 4, title: "Categories", url: ROUTES.CATEGORIES },
+    { id: 5, title: "Contact", url: ROUTES.CONTACT },
   ];
 
   return (
