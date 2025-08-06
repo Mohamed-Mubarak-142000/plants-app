@@ -1,0 +1,82 @@
+{
+  "meta_data": {
+    "title": "Buy your dream plants",
+    "description": "Our environment, the world in which we live and work, is a mirror of our attitudes and expectations.!"
+  },
+  "home": {
+    "popular_stands_title": "Popular Plants Stands",
+    "popular_stands_subtitle": "Choose your favorite stand",
+    "about_title": "About us",
+    "about_subtitle": "Order now and appreciate the beauty of nature",
+    "categories_title": "Categories",
+    "categories_subtitle": "Find what you are looking for"
+  },
+  "about": {
+    "title": "About us",
+    "subtitle": "Order now and appreciate the beauty of nature",
+    "items": {
+      "assortment": {
+        "title": "Large Assortment",
+        "content": "we offer many different types of products with fewer variations in each category."
+      },
+      "shipping": {
+        "title": "Fast & Free Shipping",
+        "content": "4-day or less delivery time, free shipping and an expedited delivery option."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "content": "answers to any business related inquiry 24/7 and in real-time."
+      }
+    }
+  },
+  "categories": {
+    "title": "Categories",
+    "subtitle": "Find what you are looking for",
+    "natural": "Natural Plants",
+    "artificial": "Artificial Plants",
+    "description": "Horem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "explore": "Explore"
+  },
+  "hero": {
+    "welcome": "Welcome to our store,",
+    "title": "Buy your dream plants",
+    "description": "Our environment, the world in which we live and work, is a mirror of our attitudes and expectations.!",
+    "species": "Plants Species",
+    "customer": "Customer",
+    "shop_now": "Shop Now"
+  },
+  "best_selling": {
+    "title": "Best Selling Plants",
+    "subtitle": "Easiest way to healthy life by buying your favorite plants.",
+    "see_more": "See more"
+  },
+  "feedback": {
+    "title": "Customers Feedback",
+    "subtitle": "What customers say about us?",
+    "testimonials": [
+      "This service is amazing! Highly recommend it.",
+      "I had a fantastic experience with this team!",
+      "Excellent customer support, and the service was top-notch."
+    ]
+  },
+  "navbar": {
+    "home": "Home",
+    "stands": "Stands",
+    "categories": "Categories",
+    "contact": "Contact",
+    "plants": "Plants"
+  },
+  "footer": {
+    "title": "Buy your dream plants",
+    "description": "Horem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "plantify": "Plantify",
+    "all_reverse": "All rights reserved",
+    "links": {
+      "home": "Home",
+      "stands": "Stands",
+      "categories": "Categories",
+      "contact": "Contact",
+      "plants": "Plants"
+    }
+  }
+}
