@@ -27,7 +27,7 @@ export const bestPlantsQuery = cacheQuery(
       },
       take: limit || 10,
     });
-    console.log("plants", plants);
+
     return plants;
   },
   [QueryKeys.BEST_PLANTS],

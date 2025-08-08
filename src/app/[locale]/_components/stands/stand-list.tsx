@@ -1,10 +1,10 @@
 import React from "react";
 import StandItem from "./stand-item";
 import Link from "../link";
-import { ROUTES } from "../conistant/enum";
 import { ArrowRight } from "lucide-react";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import getTrans from "@/lib/translation";
+import { ROUTES } from "@/lib/types";
 
 interface StandListProps {
   image: string;

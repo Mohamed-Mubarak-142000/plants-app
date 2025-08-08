@@ -78,5 +78,23 @@
       "contact": "Contact",
       "plants": "Plants"
     }
+  },
+  "admin": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "users": "Users",
+      "orders": "Orders",
+      "inbox": "Messages",
+      "logout": "Logout",
+      "profile": "Profile",
+      "plant_section_title": "Plant Section",
+      "plants_list": "Plants List",
+      "plants_transactions": "Plants Transactions",
+      "categories_list": "Categories List",
+      "ornamental_plants": "Ornamental Plants",
+      "medicinal_plants": "Medicinal Plants",
+      "accessories_plants": "Accessory Plants",
+      "food_plants": "Food Plants"
+    }
   }
 }

@@ -7,46 +7,51 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//CREATE MODEL USER
+enum UserRole {
+  ADMIN
+  CUSTOMER
+  SELLER
+}
+
 model User {
   id            String          @id @default(cuid())
-  name_Ar       String
-  name_En       String
+  nameAr        String
+  nameEn        String
   email         String          @unique
   password      String
   image         String?
-  phone         String?
-  lang          String?
-  lat           String?
+  phone         String?         @default("")
+  lang          String?         @default("ar")
+  lat           String?         @default("")
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
-  role          String
+  role          UserRole
   orders        Order[]
   orderQuantity OrderQuantity[]
 }
 
 model Product {
-  id             String          @id @default(cuid())
-  name_ar        String
-  name_en        String
-  description_ar String
-  description_en String
-  image          String
-  order          Int
-  basePrice      Float
-  offerPrice     Float
-  stock          Int
-  category       Category        @relation(fields: [categoryId], references: [id])
-  stands         Stand[]
-  createdAt      DateTime        @default(now())
-  updatedAt      DateTime        @updatedAt
-  categoryId     String
-  orderQuantity  OrderQuantity[]
+  id            String          @id @default(cuid())
+  nameAr        String
+  nameEn        String
+  descriptionAr String
+  descriptionEn String
+  image         String
+  order         Int?
+  basePrice     Float
+  offerPrice    Float?
+  stock         Int
+  categoryId    String
+  category      Category        @relation(fields: [categoryId], references: [id])
+  stands        Stand[]
+  orderQuantity OrderQuantity[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
 }
 
 model Order {
-  id          String          @id @default(cuid())
-  paid        Boolean         @default(false)
+  id          String   @id @default(cuid())
+  paid        Boolean  @default(false)
   subtotal    Float
   deliveryFee Float
   total       Float
@@ -54,47 +59,47 @@ model Order {
   phone       String
   lat         String
   lang        String
-  createdAt   DateTime        @default(now())
-  updatedAt   DateTime        @updatedAt
-  products    OrderQuantity[]
-  User        User?           @relation(fields: [userId], references: [id])
-  userId      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  userId   String
+  user     User            @relation(fields: [userId], references: [id])
+  products OrderQuantity[]
 }
 
 model OrderQuantity {
-  id        String   @id @default(cuid())
-  quantity  Int
-  Order     Order[]
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?
-  User      User?    @relation(fields: [userId], references: [id])
-  userId    String?
+  id       String @id @default(cuid())
+  quantity Int
+
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id])
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
 }
 
 model Category {
-  id      String    @id @default(cuid())
-  name_ar String
-  name_en String
-  Product Product[]
+  id       String    @id @default(cuid())
+  nameAr   String
+  nameEn   String
+  products Product[]
 }
 
 model Stand {
-  id      String @id @default(cuid())
-  name_ar String
-  name_en String
-
-  description_ar String
-  description_en String
-
-  image      String
-  basePrice  Float
-  offerPrice Float
-
-  stock Int
-
-  createdAt DateTime @default(now())
-
-  updatedAt DateTime @updatedAt
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?
+  id            String   @id @default(cuid())
+  nameAr        String
+  nameEn        String
+  descriptionAr String
+  descriptionEn String
+  image         String
+  basePrice     Float
+  offerPrice    Float
+  stock         Int
+  productId     String
+  product       Product  @relation(fields: [productId], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }

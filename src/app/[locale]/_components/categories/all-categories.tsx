@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import Link from "../link";
-import { ROUTES } from "../conistant/enum";
 import { ArrowRight } from "lucide-react";
 import TitleSection from "../title-section/title-section";
 import getTrans from "@/lib/translation";
 import { getCurrentLang } from "@/lib/get-current-lang";
+import { ROUTES } from "@/lib/types";
 
 const ImageCat1 = "/images/Frame 36.png";
 const ImageCat2 = "/images/Frame 37.png";

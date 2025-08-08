@@ -78,5 +78,23 @@
       "contact": "تواصل معنا",
       "plants": "النباتات"
     }
+  },
+  "admin": {
+    "sidebar": {
+      "dashboard": "لوحة التحكم",
+      "users": "المستخدمين",
+      "orders": "الطلبات",
+      "inbox": "الرسائل",
+      "logout": "تسجيل الخروج",
+      "profile": "الملف الشخصي",
+      "plant_section_title": "قسم النباتات",
+      "plants_list": "قائمة النباتات",
+      "plants_transactions": "معاملات النباتات",
+      "categories_list": "قائمة الفئات",
+      "ornamental_plants": "نباتات الزينة",
+      "medicinal_plants": "نباتات الطبية",
+      "accessories_plants": "نباتات الاكسسوارات",
+      "food_plants": "نباتات غذائية"
+    }
   }
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "../link";
-import { ROUTES } from "../conistant/enum";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import getTrans from "@/lib/translation";
+import { ROUTES } from "@/lib/types";
 
 async function TitleBestSelling() {
   const locale = await getCurrentLang();

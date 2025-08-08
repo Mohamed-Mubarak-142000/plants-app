@@ -24,8 +24,9 @@ export async function middleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
 
   const pathname = request.nextUrl.pathname;
+
   const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) => !pathname.startsWith(`/${locale}/`)
   );
 
   if (pathnameIsMissingLocale) {
