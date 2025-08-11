@@ -1,10 +1,10 @@
 import React from "react";
-import { PlantType } from "../types/plants";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 import Link from "../link";
 import { formatCurrency } from "@/lib/formatter";
+import { PlantType } from "@/lib/types";
 
 const PlantItem = ({ plant }: { plant: PlantType }) => {
   return (
@@ -12,7 +12,7 @@ const PlantItem = ({ plant }: { plant: PlantType }) => {
       <CardContent className="flex  items-center justify-center flex-col h-[300px] my-2">
         <Image
           src={plant.image}
-          alt={plant.name_ar}
+          alt={plant.nameAr}
           width={200}
           height={200}
           loading="lazy"
@@ -24,7 +24,7 @@ const PlantItem = ({ plant }: { plant: PlantType }) => {
         <div className="flex justify-between items-center w-full">
           <span className="text-center">
             {" "}
-            <Link href={`/plants/${plant.id}`}>{plant.name_ar}</Link>{" "}
+            <Link href={`/plants/${plant.id}`}>{plant.nameAr}</Link>{" "}
           </span>
           <span className="text-center font-bold">
             {formatCurrency(plant.basePrice)}

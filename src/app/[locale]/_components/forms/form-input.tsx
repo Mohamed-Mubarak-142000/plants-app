@@ -9,7 +9,8 @@ interface FormInputProps extends React.ComponentProps<typeof Input> {
   name: string;
   wrapperClassName?: string;
   className?: string;
-  type?: "text" | "number";
+  type?: "text" | "number" | "email" | "password";
+  labelClassName?: string;
 }
 
 const FormInput = ({
@@ -17,6 +18,7 @@ const FormInput = ({
   name,
   wrapperClassName,
   className,
+  labelClassName,
   type = "text",
   ...props
 }: FormInputProps) => {
@@ -30,7 +32,10 @@ const FormInput = ({
   return (
     <div className={cn("flex flex-col gap-1", wrapperClassName)}>
       {label && (
-        <label htmlFor={name} className="text-sm font-medium text-gray-700">
+        <label
+          htmlFor={name}
+          className={cn("text-sm font-medium text-gray-700", labelClassName)}
+        >
           {label}
         </label>
       )}
@@ -47,14 +52,14 @@ const FormInput = ({
               : value,
         })}
         className={cn(
-          fieldError && "border-red-500 focus-visible:ring-red-500",
+          fieldError && "border-red-800 focus-visible:ring-red-800",
           className
         )}
         {...props}
       />
 
       {fieldError && (
-        <span className="text-xs text-red-500">
+        <span className="text-md text-red-800">
           {(fieldError as { message?: string })?.message}
         </span>
       )}

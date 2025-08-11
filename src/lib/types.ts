@@ -10,6 +10,17 @@ export type PlantType = Prisma.ProductGetPayload<{
   include: { orderQuantity: true; category: true; stands: true; _count: true };
 }>;
 
+// type user from prisma
+export type UserType = Prisma.UserGetPayload<{
+  include: {
+    Account: true;
+    Session: true;
+    _count: true;
+    orderQuantity: true;
+    orders: true;
+  };
+}>;
+
 export enum Languages {
   ARABIC = "ar",
   ENGLISH = "en",
@@ -26,11 +37,12 @@ export enum USER_ROLE {
 
 // ROUTES.ts
 export const ROUTES = {
-  HOME: "/",
+  HOME: "/customer",
   PLANTS: "/plants",
   STANDS: "/stands",
   CATEGORIES: "/categories",
   CONTACT: "/contact",
+  AUTH: "/auth",
 
   ADMIN: "/admin",
   DASHBOARD: "dashboard",
@@ -56,14 +68,40 @@ export const ROUTES_CATEGORIES = {
   CATEGORIES_DELETE: "categories-delete",
   CATEGORIES_DETAILS: "categories-details",
 };
-export enum AUTH {
+export enum ROUTES_AUTH {
   LOGIN = "/login",
   REGISTER = "/register",
+  PROFILE = "/profile",
 }
 
 export type SidebarLink = {
   title: string;
   href: string;
   icon: () => React.ReactNode;
-  children?: SidebarLink[];
+  children?: {
+    title: string;
+    href: string;
+    icon: () => React.ReactNode;
+  }[];
+};
+
+export type LoginFormTranslationsProps = {
+  emailLabel: string;
+  emailPlaceholder: string;
+  passwordLabel: string;
+  passwordPlaceholder: string;
+  forgetPasswordText: string;
+  loginButton: string;
+  noAccountText: string;
+  signUpText: string;
+  loginSuccess: string;
+  loginError: string;
+};
+
+export type ValidationMessages = {
+  emailInvalid: string;
+  passwordInvalid: string;
+  emailRequired: string;
+  passwordRequired: string;
+  passwordMin: string;
 };

@@ -1,9 +1,20 @@
+import AboutUs from "../_components/about/about-us";
+import BestSelling from "../_components/best-selling/best-selling";
+import AllCategories from "../_components/categories/all-categories";
+import FeedbackCarousel from "../_components/customers-feedback/customers-feedback";
+import Hero from "../_components/hero";
+import AllStands from "../_components/stands/all-stands";
+
 // app/customer/page.tsx
 export default function CustomerPage() {
   return (
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">Customer Home</h2>
-      <p>Welcome to the customer section of the app.</p>
-    </div>
+    <>
+      <Hero />
+      <BestSelling />
+      <AllStands />
+      <AboutUs />
+      <AllCategories />
+      <FeedbackCarousel />
+    </>
   );
 }

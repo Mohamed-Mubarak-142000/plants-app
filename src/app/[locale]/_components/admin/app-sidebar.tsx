@@ -19,10 +19,17 @@ import {
 } from "@radix-ui/react-collapsible";
 import Logo from "../logo";
 import { SidebarLink } from "@/lib/types";
+import { getCurrentLang } from "@/lib/get-current-lang";
 
-export function AppSidebar({ SidebarLinks }: { SidebarLinks: SidebarLink[] }) {
+export async function AppSidebar({
+  SidebarLinks,
+}: {
+  SidebarLinks: SidebarLink[];
+}) {
+  const locale = await getCurrentLang();
+
   return (
-    <Sidebar>
+    <Sidebar side={locale === "en" ? "left" : "right"}>
       <SidebarContent className="bg-green-700">
         <SidebarGroup>
           <SidebarGroupLabel className="text-white flex items-center justify-center h-20 text-lg">

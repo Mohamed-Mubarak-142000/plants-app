@@ -96,5 +96,28 @@
       "accessories_plants": "نباتات الاكسسوارات",
       "food_plants": "نباتات غذائية"
     }
+  },
+
+  "auth": {
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "forgetPasswordText": "نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "noAccountText": "ليس لديك حساب؟",
+    "signUpText": "إنشاء حساب",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "loginError": "فشل تسجيل الدخول، يرجى التحقق من البيانات",
+    "signin": "تسجيل الدخول إلى حسابك.",
+    "welcome": "مرحبًا بك في متجرنا، اشترِ نباتات أحلامك. بيئتنا، العالم الذي نعيش ونعمل فيه، هو مرآة لمواقفنا وتوقعاتنا!",
+
+    "validationMessages": {
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "passwordMin": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "passwordInvalid": "كلمة المرور غير صحيحة"
+    }
   }
 }

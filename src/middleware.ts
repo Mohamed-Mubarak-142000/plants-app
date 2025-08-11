@@ -13,8 +13,7 @@ function getLocale(request: NextRequest): string | undefined {
 
   try {
     locale = matchLocale(languages, locales, i18n.defaultLocale);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-  } catch (error: any) {
+  } catch {
     locale = i18n.defaultLocale;
   }
   return locale;
@@ -22,8 +21,12 @@ function getLocale(request: NextRequest): string | undefined {
 
 export async function middleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
-
   const pathname = request.nextUrl.pathname;
+
+  // ✅ لو المستخدم على الصفحة الرئيسية فقط
+  if (pathname === "/" || pathname === "") {
+    return NextResponse.redirect(new URL("/en/customer", request.url));
+  }
 
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`)

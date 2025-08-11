@@ -9,7 +9,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-export const addPlantSchema = z.object({
+const addPlantSchema = z.object({
   nameAr: z.string().min(1, "الاسم بالعربي مطلوب"),
   nameEn: z.string().min(1, "الاسم بالإنجليزي مطلوب"),
   descriptionAr: z.string().min(1, "الوصف بالعربي مطلوب"),

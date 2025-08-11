@@ -1,6 +1,7 @@
 import React from "react";
-import { PlantType } from "../types/plants";
+
 import PlantItem from "./plant-item";
+import { PlantType } from "@/lib/types";
 
 const PlantList = ({ plants }: { plants: PlantType[] }) => {
   return (

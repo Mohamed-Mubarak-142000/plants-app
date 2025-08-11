@@ -96,5 +96,27 @@
       "accessories_plants": "Accessory Plants",
       "food_plants": "Food Plants"
     }
+  },
+  "auth": {
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgetPasswordText": "Forget Password?",
+    "loginButton": "Login",
+    "noAccountText": "Don't have an account?",
+    "signUpText": "Sign up",
+    "loginSuccess": "Login successful",
+    "loginError": "Login failed, please check your credentials",
+    "signin": "Sign in to your account.",
+    "welcome": "Welcome to our store, Buy your dream plants. Our environment, the world in which we live and work, is a mirror of our attitudes and expectations!",
+
+    "validationMessages": {
+      "emailInvalid": "Please enter a valid email address",
+      "emailRequired": "Email is required",
+      "passwordMin": "Password must be at least 6 characters long",
+      "passwordRequired": "Password is required",
+      "passwordInvalid": "Password is invalid"
+    }
   }
 }

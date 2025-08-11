@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CategoryForm from "../../_components/admin/category-form";
 
-export const addCategorySchema = z.object({
+const addCategorySchema = z.object({
   nameAr: z.string().min(1, "الاسم بالعربي مطلوب"),
   nameEn: z.string().min(1, "الاسم بالإنجليزي مطلوب"),
   descriptionAr: z.string().min(1, "الوصف بالعربي مطلوب"),

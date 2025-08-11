@@ -4,12 +4,13 @@ import getTrans from "@/lib/translation";
 
 import Header from "../_components/header";
 import Footer from "../_components/footer";
+import NavbarActions from "../_components/header/navbar-actions";
 
 export async function generateStaticParams() {
   return [{ locale: Languages.ARABIC }, { locale: Languages.ENGLISH }];
 }
 
-export default async function RootLayout({
+export default async function CustomerLayout({
   children,
   params,
 }: Readonly<{
@@ -18,6 +19,7 @@ export default async function RootLayout({
 }>) {
   const locale = (await params).locale;
   const { navbar } = await getTrans(locale);
+  const navbarActions = await NavbarActions({ locale: locale as Locale });
   const links = [
     { id: 1, title: navbar.home, url: ROUTES.HOME },
     { id: 2, title: navbar.plants, url: ROUTES.PLANTS },
@@ -27,7 +29,7 @@ export default async function RootLayout({
   ];
   return (
     <div>
-      <Header links={links} />
+      <Header links={links} NavbarActions={navbarActions} />
       <main className="min-h-screen-90 mt-28">{children}</main>
       <Footer />
     </div>
