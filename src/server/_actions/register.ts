@@ -1,4 +1,5 @@
 "use server";
+
 import { RegisterSchemaDto } from "@/app/[locale]/_components/auth/register-form";
 import { db } from "@/lib/prisma-db";
 import bcrypt from "bcrypt";
@@ -40,5 +41,10 @@ export const register = async (userData: RegisterSchemaDto) => {
     };
   } catch (error) {
     console.log("error", error);
+    return {
+      message: "Something went wrong",
+      success: false,
+      statusCode: 500,
+    };
   }
 };

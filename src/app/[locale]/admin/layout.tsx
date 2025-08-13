@@ -8,10 +8,10 @@ export default async function AdminLayout({
   children,
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
   children: React.ReactNode;
 }) {
-  const locale = params.locale;
+  const { locale } = await params;
   const SidebarLinks = await getSidebarLinks(locale);
 
   return (

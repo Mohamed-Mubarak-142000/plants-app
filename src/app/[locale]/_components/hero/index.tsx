@@ -4,6 +4,12 @@ import Link from "../link";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import getTrans from "@/lib/translation";
 import { ROUTES } from "@/lib/types";
+import {
+  HeroImage,
+  RectHero,
+  VectorLeft,
+  VectorRight,
+} from "../../../../../public/images";
 
 async function Hero() {
   const locale = await getCurrentLang();
@@ -45,7 +51,7 @@ async function Hero() {
       <div className="h-full relative hidden lg:block">
         <Image
           className="absolute bottom-0 lg:right-10 object-cover "
-          src="/images/Rectangle 2.png"
+          src={RectHero}
           alt="hero"
           width={500}
           height={450}
@@ -53,7 +59,7 @@ async function Hero() {
 
         <Image
           className="absolute bottom-0 lg:right-10 object-cover "
-          src="/images/unsplash_cLaaxa4DSnc-removebg-preview 1.png"
+          src={HeroImage}
           alt="hero"
           width={500}
           height={400}
@@ -61,7 +67,7 @@ async function Hero() {
 
         <Image
           className="hidden lg:block absolute bottom-28 left-[-5rem] object-cover"
-          src="/images/Vector 186.png"
+          src={VectorLeft}
           alt="hero"
           width={200}
           height={200}
@@ -69,7 +75,7 @@ async function Hero() {
 
         <Image
           className="hidden lg:block absolute top-5 right-10 object-cover"
-          src="/images/Vector 187.png"
+          src={VectorRight}
           alt="hero"
           width={70}
           height={70}

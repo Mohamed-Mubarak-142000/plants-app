@@ -122,10 +122,16 @@ model OrderQuantity {
 }
 
 model Category {
-  id       String    @id @default(cuid())
-  nameAr   String
-  nameEn   String
-  products Product[]
+  id            String    @id @default(cuid())
+  nameAr        String
+  nameEn        String
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  descriptionAr String
+  descriptionEn String
+  order         Int
+  products      Product[]
 }
 
 model Stand {
@@ -142,4 +148,5 @@ model Stand {
   product       Product  @relation(fields: [productId], references: [id])
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+  order         Int
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import AuthImage from "../../../../../public/images/auth2.jpg";
 import Logo from "../../_components/logo";
 import RegisterForm from "../../_components/auth/register-form";
+import { RegisterAuth } from "../../../../../public/images";
 
 export default function RegisterPage() {
   return (
@@ -9,7 +9,7 @@ export default function RegisterPage() {
       {/* Left side image */}
       <div className="col-span-1">
         <Image
-          src={AuthImage}
+          src={RegisterAuth}
           alt="Authentication"
           width={300}
           height={500}

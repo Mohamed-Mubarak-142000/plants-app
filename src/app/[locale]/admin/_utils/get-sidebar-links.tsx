@@ -1,13 +1,14 @@
 // lib/sidebar-links.ts
 import { Locale } from "@/i18n.config";
 import getTrans from "@/lib/translation";
-import { ROUTES, ROUTES_PLANTS, SidebarLink } from "@/lib/types";
+import { ROUTES, ROUTES_AUTH, ROUTES_PLANTS, SidebarLink } from "@/lib/types";
 import {
   Flower,
   Inbox,
   LayoutDashboard,
   Leaf,
   ListOrdered,
+  User2Icon,
   Users,
 } from "lucide-react";
 
@@ -56,6 +57,12 @@ export async function getSidebarLinks(locale: Locale): Promise<SidebarLink[]> {
       title: admin.sidebar.inbox,
       href: `${ROUTES.ADMIN}/${ROUTES.INBOX}`,
       icon: () => <Inbox className="w-4 h-4 mr-2" />,
+    },
+    //profile
+    {
+      title: admin.sidebar.profile,
+      href: `${ROUTES.ADMIN}/${ROUTES_AUTH.PROFILE}`,
+      icon: () => <User2Icon className="w-4 h-4 mr-2" />,
     },
   ];
 

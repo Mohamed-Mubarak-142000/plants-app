@@ -1,9 +1,10 @@
 import Image from "next/image";
-import AuthImage from "../../../../../public/images/auth.jpg";
+
 import Logo from "../../_components/logo";
 import LoginForm from "../../_components/auth/login-form";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import getTrans from "@/lib/translation";
+import { LoginAuth } from "../../../../../public/images";
 
 export default async function LoginPage() {
   const locale = await getCurrentLang();
@@ -13,7 +14,7 @@ export default async function LoginPage() {
       {/* Left image */}
       <div className="col-span-2">
         <Image
-          src={AuthImage}
+          src={LoginAuth}
           alt="image"
           width={300}
           height={500}

@@ -14,7 +14,7 @@ import {
 import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { Loader } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   createLoginSchema,
   LoginSchemaDto,
@@ -28,6 +28,7 @@ export default function LoginForm({
   validationMessages: ValidationMessages;
 }) {
   const [loading, setLoading] = React.useState(false);
+  const { locale } = useParams();
   const router = useRouter();
   const loginSchema = React.useMemo(
     () =>
@@ -57,8 +58,11 @@ export default function LoginForm({
       if (result?.error) {
         toast.error(JSON.parse(result.error));
       } else if (result?.ok && result.url) {
+        router.replace(`/${locale}/${ROUTES.HOME}/${ROUTES_AUTH.PROFILE}`, {
+          scroll: false,
+        });
         toast.success(translations.loginSuccess);
-        router.push(`/en${ROUTES.HOME}`);
+        console.log("result", result);
       }
     } catch (error) {
       console.error(error);

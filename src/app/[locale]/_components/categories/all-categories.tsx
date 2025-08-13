@@ -6,10 +6,8 @@ import TitleSection from "../title-section/title-section";
 import getTrans from "@/lib/translation";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import { ROUTES } from "@/lib/types";
+import { Frame1, Frame2, Frame3 } from "../../../../../public/images";
 
-const ImageCat1 = "/images/Frame 36.png";
-const ImageCat2 = "/images/Frame 37.png";
-const ImageCat3 = "/images/Frame 38.png";
 async function AllCategories() {
   const locale = await getCurrentLang();
   const { categories } = await getTrans(locale);
@@ -21,7 +19,7 @@ async function AllCategories() {
         <div className="container relative">
           <div className=" w-full lg:absolute lg:left-0 lg:top-[-30px] lg:w-[350px] lg:min-h-[500px]">
             <Image
-              src={ImageCat1}
+              src={Frame1}
               alt=""
               width={350}
               height={500}
@@ -33,7 +31,7 @@ async function AllCategories() {
           </div>
           <div className=" w-full lg:absolute lg:left-[50%] lg:top-[50%] lg:translate-x-[-50%] lg:translate-y-[10%] lg:w-[350px] lg:h-[650px] ">
             <Image
-              src={ImageCat3}
+              src={Frame2}
               alt=""
               width={350}
               height={400}
@@ -57,7 +55,7 @@ async function AllCategories() {
 
           <div className=" w-full lg:absolute lg:right-0 lg:top-[-30px] lg:w-[350px] lg:h-[500px] ">
             <Image
-              src={ImageCat2}
+              src={Frame3}
               alt=""
               width={350}
               height={500}

@@ -5,9 +5,10 @@ import { ArrowRight } from "lucide-react";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import getTrans from "@/lib/translation";
 import { ROUTES } from "@/lib/types";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface StandListProps {
-  image: string;
+  image: string | StaticImport;
   id: number;
 }
 async function StandList({ allStand }: { allStand: StandListProps[] }) {

@@ -20,6 +20,7 @@ import {
 import Logo from "../logo";
 import { SidebarLink } from "@/lib/types";
 import { getCurrentLang } from "@/lib/get-current-lang";
+import SignoutButton from "../header/signout-button";
 
 export async function AppSidebar({
   SidebarLinks,
@@ -86,6 +87,8 @@ export async function AppSidebar({
                   </SidebarMenuItem>
                 )
               )}
+
+              <SignoutButton className="mt-10" />
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

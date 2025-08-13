@@ -10,8 +10,8 @@ export default function CustomerPage() {
   return (
     <>
       <Hero />
-      <BestSelling />
       <AllStands />
+      <BestSelling />
       <AboutUs />
       <AllCategories />
       <FeedbackCarousel />

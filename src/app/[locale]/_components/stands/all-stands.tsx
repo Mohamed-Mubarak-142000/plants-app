@@ -3,6 +3,7 @@ import StandList from "./stand-list";
 import TitleSection from "../title-section/title-section";
 import { getCurrentLang } from "@/lib/get-current-lang";
 import getTrans from "@/lib/translation";
+import { Image1, Image2, Image3 } from "../../../../../public/images";
 
 async function AllStands() {
   const locale = await getCurrentLang();
@@ -11,15 +12,15 @@ async function AllStands() {
   const allStand = [
     {
       id: 1,
-      image: "/images/image 5.png",
+      image: Image1,
     },
     {
       id: 2,
-      image: "/images/image 6.png",
+      image: Image2,
     },
     {
       id: 3,
-      image: "/images/image 7.png",
+      image: Image3,
     },
   ];
   return (

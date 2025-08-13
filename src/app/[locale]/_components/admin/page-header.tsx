@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-interface ActionHeader {
+export interface ActionHeader {
   label: string;
   onClick: () => void;
   className?: string;

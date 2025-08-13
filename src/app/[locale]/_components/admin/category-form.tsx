@@ -1,21 +1,69 @@
+"use client";
 import React from "react";
-import { FieldValues, FormProvider, UseFormReturn } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import FormSections from "../forms/form-sections";
 import FormInput from "../forms/form-input";
 import { Button } from "@/components/ui/button";
+import { z } from "zod";
+import { useRouter } from "next/navigation";
+import { ROUTES } from "@/lib/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { addCategory } from "@/server/_actions/add-category";
+import { Loader } from "lucide-react";
 
-interface GenericFormProps<T extends FieldValues> {
-  methods: UseFormReturn<T>;
-  onSubmit: (data: T) => void;
-}
+const addCategorySchema = z.object({
+  nameAr: z.string().min(1, "الاسم بالعربي مطلوب"),
+  image: z.string().url("رابط الصورة غير صحيح").optional(),
+  nameEn: z.string().min(1, "الاسم بالإنجليزي مطلوب"),
+  descriptionAr: z.string().min(1, "الوصف بالعربي مطلوب"),
+  descriptionEn: z.string().min(1, "الوصف بالإنجليزي مطلوب"),
+});
 
-const CategoryForm = <T extends FieldValues>({
-  methods,
-  onSubmit,
-}: GenericFormProps<T>) => {
+export type AddCategoryDto = z.infer<typeof addCategorySchema>;
+
+const CategoryForm = () => {
+  const [loading, setLoading] = React.useState(false);
+  const router = useRouter();
+
+  const navigateToList = () => {
+    router.push(`${ROUTES.ADMIN}/${ROUTES.CATEGORY_LIST}`);
+  };
+
+  const AddCategoryMethods = useForm<AddCategoryDto>({
+    resolver: zodResolver(addCategorySchema),
+    defaultValues: {
+      nameAr: "",
+      nameEn: "",
+      descriptionAr: "",
+      descriptionEn: "",
+    },
+  });
+
+  const onSubmit = async (data: AddCategoryDto) => {
+    try {
+      setLoading(true);
+      const result = await addCategory(data);
+      if (result?.success) {
+        navigateToList();
+        toast(result.message);
+      } else {
+        toast(result?.message);
+      }
+      console.log(data);
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-4">
+    <FormProvider {...AddCategoryMethods}>
+      <form
+        onSubmit={AddCategoryMethods.handleSubmit(onSubmit)}
+        className="space-y-4"
+      >
         <FormSections>
           <FormSections.Grid>
             <FormSections.Start>
@@ -54,7 +102,11 @@ const CategoryForm = <T extends FieldValues>({
           </FormSections.Grid>
 
           <Button type="submit" variant={"default"}>
-            Submit
+            {loading ? (
+              <Loader className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              "Save"
+            )}
           </Button>
         </FormSections>
       </form>
